@@ -1,11 +1,10 @@
 <?php 
 
-$names = [23, 12, 45, 456, 2, 678, 56, 55, 45454, 45];
-$count = 1;
-
-while($count<= 100){
-echo "<li>$count</li>";
-$count++;
-}
+while(have_posts()){
+    the_post(); ?>
+    <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+    <?php the_content(); ?>
+    <hr>
+<?php }
 ?>
 
